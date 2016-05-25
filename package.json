@@ -7,7 +7,7 @@
     "test": "karma start",
     "start": "node server.js"
   },
-  "author": "Andrew Mead",
+  "author": "Andrew Mead - Francesco Biegi(simple review)",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.9.1",

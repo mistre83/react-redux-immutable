@@ -1,6 +1,8 @@
 var uuid = require('node-uuid');
 var moment = require('moment');
 
+import { List, Map } from 'immutable';
+
 export var searchTextReducer = (state = '', action) => {
   switch (action.type) {
     case 'SET_SEARCH_TEXT':
@@ -19,7 +21,7 @@ export var showCompletedReducer = (state = false, action) => {
   }
 };
 
-export var todosReducer = (state = [], action) => {
+export var todosReducer = (state = List(), action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
@@ -47,10 +49,11 @@ export var todosReducer = (state = [], action) => {
         }
       });
     case 'ADD_TODOS':
-      return [
+      /*return [
         ...state,
         ...action.todos
-      ];
+      ];*/
+      return state.merge(action.todos);
     default:
       return state;
   }
